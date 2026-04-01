@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #050816;
+  color: #ff8a1f;
+  font-family: "Plus Jakarta Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: rgba(40, 141, 255, 0.35);
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 py-20 sm:px-10 lg:px-16;
+  }
+
+  .container-max {
+    @apply mx-auto max-w-6xl;
+  }
+
+  .eyebrow {
+    @apply text-sm uppercase tracking-[0.3em] text-orange-500/70;
+  }
+
+  .glass-panel {
+    @apply rounded-3xl border border-white/10 bg-white/5 backdrop-blur;
+  }
+
+  .primary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-electric-500 px-6 py-3 text-sm font-semibold text-orange-500 shadow-glow transition hover:bg-electric-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-400 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight;
+  }
+
+  .secondary-button {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-orange-500/80 transition hover:border-electric-400 hover:text-orange-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-400 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight;
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-white/10 bg-slate/70 px-4 py-3 text-sm text-center text-orange-500 placeholder:text-orange-500/60 shadow-inner focus:border-electric-400 focus:outline-none focus:ring-2 focus:ring-electric-500/30;
+  }
+}
