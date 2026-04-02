@@ -35,7 +35,6 @@ This landing page is the first MVP to:
 - Pilot application form (email capture)
 - GitHub Pages deployment
 
----
 
 ## 🛠 Tech Stack
 
@@ -45,32 +44,18 @@ This landing page is the first MVP to:
 - GitHub Pages (deployment)
 - gh-pages (CI deploy)
 
----
-
-## 🚀 Getting Started
-
-### 1. Clone the repository
-```bash
-git clone https://github.com/gavbaeilvua758/colix-landing.git
-cd colix-landing
+## Quick Start
 ```
-
-### 2. Install dependencies
-```bash
 npm install
-```
-
-### 3. Run the project locally
-```bash
 npm run dev
 ```
 
-### 4. Build for production
-```bash
+## Build
+```
 npm run build
 ```
 
-### 5. Preview the production build
-```bash
-npm run preview
+## Deploy
+```
+npm run deploy
 ```
