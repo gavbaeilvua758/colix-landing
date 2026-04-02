@@ -5,7 +5,7 @@ export default {
   theme: {
     extend: {
       colors: {
-        midnight: "#050816",
+        midnight: "#000000",
         graphite: "#0B1220",
         slate: "#101A2C",
         steel: "#91A4C3",
