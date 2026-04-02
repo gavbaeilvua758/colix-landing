@@ -95,12 +95,9 @@ Example:
 VITE_API_BASE_URL=http://localhost:5000
 ```
 
-## Telegram Bot Setup (Quick)
+## Telegram Bot Setup
 
-1. Create a bot with **@BotFather** and copy the bot token.
-2. Start a chat with your bot and send any message.
-3. Open this URL in the browser (replace token):
-```
-https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
-```
-4. Find your `chat.id` in the response and use it as `TELEGRAM_CHAT_ID`.
+- Create a bot with  and copy the token.
+- Send a message to the bot.
+- Open https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates and copy chat.id into TELEGRAM_CHAT_ID.
+
