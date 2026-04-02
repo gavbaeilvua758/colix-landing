@@ -59,3 +59,48 @@ npm run build
 ```
 npm run deploy
 ```
+
+## Backend Setup (Telegram)
+
+### 1. Install backend dependencies
+```bash
+cd backend
+npm install
+```
+
+### 2. Create your environment file
+```bash
+cp .env.example .env
+```
+
+Fill in:
+- `TELEGRAM_BOT_TOKEN`
+- `TELEGRAM_CHAT_ID`
+- `PORT`
+
+### 3. Run the backend
+```bash
+npm start
+```
+
+### 4. Test the form
+- Start the backend on `http://localhost:5000`
+- Start the frontend (`npm run dev` in the root)
+- Submit the form — you should receive a Telegram message
+
+### Frontend API base (optional)
+Set `VITE_API_BASE_URL` if your backend runs on a different host.
+Example:
+```bash
+VITE_API_BASE_URL=http://localhost:5000
+```
+
+## Telegram Bot Setup (Quick)
+
+1. Create a bot with **@BotFather** and copy the bot token.
+2. Start a chat with your bot and send any message.
+3. Open this URL in the browser (replace token):
+```
+https://api.telegram.org/bot<YOUR_BOT_TOKEN>/getUpdates
+```
+4. Find your `chat.id` in the response and use it as `TELEGRAM_CHAT_ID`.

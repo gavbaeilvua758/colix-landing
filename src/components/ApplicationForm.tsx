@@ -9,6 +9,8 @@ const initialState: ApplicationFormState = {
   email: ""
 };
 
+const apiBase = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
 const ApplicationForm = () => {
   const [formData, setFormData] = useState<ApplicationFormState>(initialState);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -40,18 +42,23 @@ const ApplicationForm = () => {
     setIsSubmitting(true);
 
     try {
-      const payload = {
-        email: formData.email,
-        createdAt: new Date().toISOString()
-      };
+      const response = await fetch(`${apiBase}/apply`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: formData.email })
+      });
 
-      await mockSubmitApplication(payload);
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || "Submission failed.");
+      }
 
       setIsSubmitted(true);
       setFormData(initialState);
       setErrors({});
     } catch (error) {
-      setErrors({ submit: "Submission failed. Please try again." });
+      const message = error instanceof Error ? error.message : "Submission failed.";
+      setErrors({ submit: message });
     } finally {
       setIsSubmitting(false);
     }
@@ -113,15 +120,6 @@ const ApplicationForm = () => {
       </div>
     </section>
   );
-};
-
-const mockSubmitApplication = async (payload: { email: string; createdAt: string }) => {
-  // TODO: Save `payload` to the database (Supabase, Postgres, etc.).
-  // TODO: Later, send Telegram notifications once the backend is ready.
-  // TODO: Replace this mock with an API call when the backend is ready.
-
-  await new Promise((resolve) => setTimeout(resolve, 900));
-  return payload;
 };
 
 export default ApplicationForm;
