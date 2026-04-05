@@ -50,11 +50,11 @@ img {
   }
 
   .primary-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-electric-500 px-6 py-3 text-sm font-semibold text-orange-500 shadow-glow transition hover:bg-electric-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-400 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-electric-500/70 bg-transparent px-6 py-3 text-sm font-semibold text-orange-500 shadow-none transition hover:border-electric-400 hover:text-orange-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-400 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight;
   }
 
   .secondary-button {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-orange-500/80 transition hover:border-electric-400 hover:text-orange-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-400 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-transparent px-6 py-3 text-sm font-semibold text-orange-500/80 transition hover:border-electric-400 hover:text-orange-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-400 focus-visible:ring-offset-2 focus-visible:ring-offset-midnight;
   }
 
   .input-field {
